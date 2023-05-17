@@ -7,4 +7,11 @@ class Desktop extends Computer {
         $this->mouse = $mouse;
         $this->computerCase = $computerCase;
     }
+
+    public function setType()
+    {
+        if ($this->computerCase) {
+            $this->type = "Desktop";
+        }
+    }
 };

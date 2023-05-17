@@ -16,7 +16,7 @@ class Laptop extends Computer {
 
     public function setType()
     {
-        if ($touchPad) {
+        if ($this->touchPad) {
             $this->type = "Laptop";
         }
     }

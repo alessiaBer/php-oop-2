@@ -17,11 +17,11 @@ class Computer {
 
     public function setType()
     {
-        return $this->type = "Desktop";
+        return $this->type = "Computer";
     }
     
-    public function getType(Type $var = null)
+    public function getType()
     {
-        return $this->type . "Computer";
+        return $this->type;
     }
 };

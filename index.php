@@ -16,7 +16,9 @@ require_once __DIR__ . '/Models/Laptop.php';
 require_once __DIR__ . '/Models/Desktop.php';
 
 include __DIR__ . '/Database/db.php';
-    
+foreach ($computers as $computer) {
+    $computer->setType();
+}
 ?>
 
 <!DOCTYPE html>
@@ -55,9 +57,10 @@ include __DIR__ . '/Database/db.php';
                         <h4><?= $computer->model ?></h4>
                         <h5>Features:</h5>
                         <ul>
+                            <li><strong>Type:</strong> <?= $computer->getType() ?></li>
                             <li><strong>Screen:</strong> <?= $computer->screen ?>"</li>
-                            <li><strong>Keyboard:</strong> <?= $computer->keyboard ?>"</li>
-                            <li><strong>USB Ports:</strong> <?= $computer->usbPorts ?>"</li>
+                            <li><strong>Keyboard:</strong> <?= $computer->keyboard ?></li>
+                            <li><strong>USB Ports:</strong> <?= $computer->usbPorts ?></li>
                         </ul>
                     </div>
                 </div>
