@@ -11,11 +11,14 @@ BONUS:
 -aggiungere un metodo che stampi la stringa con tutte le info del dispositivo (oltre ai getter/setters necessari).
 
 */
+require_once __DIR__ . '/Models/Composition/Screen.php';
+require_once __DIR__ . '/Models/Composition/Keyboard.php';
 require_once __DIR__ . '/Models/Computer.php';
 require_once __DIR__ . '/Models/Laptop.php';
 require_once __DIR__ . '/Models/Desktop.php';
 
 include __DIR__ . '/Database/db.php';
+
 foreach ($computers as $computer) {
     $computer->setType();
 }
@@ -42,9 +45,9 @@ foreach ($computers as $computer) {
         }
     </style>
 </head>
-<body class="bg-dark">
+<body class="bg-dark text-white">
     <div class="container">
-        <h1 class="text-center text-white py-5">My Computer Cards</h1>
+        <h1 class="text-center py-5">My Computer Cards</h1>
 
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
             <?php foreach ($computers as $computer) : ?>
@@ -58,8 +61,19 @@ foreach ($computers as $computer) {
                         <h5>Features:</h5>
                         <ul>
                             <li><strong>Type:</strong> <?= $computer->getType() ?></li>
-                            <li><strong>Screen:</strong> <?= $computer->screen ?>"</li>
-                            <li><strong>Keyboard:</strong> <?= $computer->keyboard ?></li>
+                            <li><strong>Screen:</strong>
+                                <ul class="screen-features">
+                                    <li><?= $computer->screen->size ?>"</li>
+                                    <li><?= $computer->screen->type ?></li>
+                                    <li><?= $computer->screen->resolution ?></li>
+                                </ul> 
+                            </li>
+                            <li><strong>Keyboard:</strong> 
+                                <ul>
+                                    <li><?= $computer->keyboard->nationality ?></li>
+                                    <li><?= $computer->keyboard->color ?></li>
+                                </ul>
+                            </li>
                             <li><strong>USB Ports:</strong> <?= $computer->usbPorts ?></li>
                         </ul>
                     </div>
