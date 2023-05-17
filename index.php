@@ -11,18 +11,11 @@ BONUS:
 -aggiungere un metodo che stampi la stringa con tutte le info del dispositivo (oltre ai getter/setters necessari).
 
 */
+require_once __DIR__ . '/Models/Computer.php';
+require_once __DIR__ . '/Models/Laptop.php';
+require_once __DIR__ . '/Models/Desktop.php';
 
-class Computer {
-    /* */
-};
-
-class DesktopComputer extends Computer {
-    /* */
-};
-
-class LaptopComputer extends Computer {
-    /* */
-};
+include __DIR__ . '/Database/db.php';
 
 ?>
 
@@ -42,7 +35,11 @@ class LaptopComputer extends Computer {
 
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
             <div class="col">
-                <div class="card"></div>
+                <?php foreach ($computers as $computer) ?>
+                <div class="card">
+
+                </div>
+                <?php endforeach ?>
             </div>
         </div>
     </div>
