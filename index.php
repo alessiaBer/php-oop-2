@@ -16,7 +16,7 @@ require_once __DIR__ . '/Models/Laptop.php';
 require_once __DIR__ . '/Models/Desktop.php';
 
 include __DIR__ . '/Database/db.php';
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -27,20 +27,42 @@ include __DIR__ . '/Database/db.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP OOP 2</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        .card {
+            border: 1px solid grey;
+        }
+        .card-img-top {
+            height: 350px;
+            padding-top: 1rem;
+        }
+        img {
+            max-width: 100%;
+        }
+    </style>
 </head>
-<body>
-
+<body class="bg-dark">
     <div class="container">
-        <h1>My Computer Cards</h1>
+        <h1 class="text-center text-white py-5">My Computer Cards</h1>
 
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
+            <?php foreach ($computers as $computer) : ?>
             <div class="col">
-                <?php foreach ($computers as $computer) ?>
-                <div class="card">
-
+                <div class="card bg-transparent p-1">
+                    <div class="card-img-top bg-white">
+                        <img src="<?= $computer->imgPath ?>" alt="#">
+                    </div>
+                    <div class="card-body text-white">
+                        <h4><?= $computer->model ?></h4>
+                        <h5>Features:</h5>
+                        <ul>
+                            <li><strong>Screen:</strong> <?= $computer->screen ?>"</li>
+                            <li><strong>Keyboard:</strong> <?= $computer->keyboard ?>"</li>
+                            <li><strong>USB Ports:</strong> <?= $computer->usbPorts ?>"</li>
+                        </ul>
+                    </div>
                 </div>
-                <?php endforeach ?>
             </div>
+            <?php endforeach; ?>
         </div>
     </div>
     
