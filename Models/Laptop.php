@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . '/Traits/Chargeable.php';
 /*
 Basepanel -> touchpad,
 Toppanel ->  cam
@@ -8,6 +8,7 @@ ac power adaptor
 */
 class Laptop extends Computer
 {
+    use Chargeable;
     public $touchPad; 
     public $cam; 
     public $acAdaptor;
