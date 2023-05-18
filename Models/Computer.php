@@ -1,10 +1,17 @@
 <?php 
+/* [ram, cpu + cpu fan] */
 class Computer
 {
     protected $type;
-    /* [ram, cpu + cpu fan] */
-    /* screen pollici, keyboard nationality, usbports quante sono, harddrive tipo, cd drive c'è o no  */
-    public function __construct(public string $imgPath, public string $model, public Screen $screen, public Keyboard $keyboard, public int $usbPorts, public string $hardDrive, public $cdDrive, public string $motherboard)
+    public $imgPath; 
+    public $model;
+    public $screen;
+    public $keyboard;
+    public $usbPorts; 
+    public $hardDrive;
+    public $cdDrive; 
+    public $motherboard;
+    public function __construct(string $imgPath, string $model, Screen $screen, Keyboard $keyboard, int $usbPorts, string $hardDrive, bool $cdDrive, string $motherboard)
     {
         $this->imgPath = $imgPath;
         $this->model = $model;

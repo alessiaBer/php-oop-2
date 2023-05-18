@@ -1,12 +1,17 @@
 <?php
-class Laptop extends Computer {
-    /*
-    Basepanel -> touchpad, 
-    Toppanel ->  cam 
-    battery 
-    ac power adaptor 
-    */
-    public function __construct($imgPath, $model, $screen, public string $touchPad, $keyboard, public string $cam, $usbPorts, $hardDrive, $cdDrive, $motherboard, public string $acAdaptor) 
+
+/*
+Basepanel -> touchpad,
+Toppanel ->  cam
+battery
+ac power adaptor
+*/
+class Laptop extends Computer
+{
+    public $touchPad; 
+    public $cam; 
+    public $acAdaptor;
+    public function __construct($imgPath, $model, $screen, string $touchPad, $keyboard, string $cam, $usbPorts, $hardDrive, $cdDrive, $motherboard, string $acAdaptor)
     {
         parent::__construct($imgPath, $model, $screen, $keyboard, $usbPorts, $hardDrive, $cdDrive, $motherboard);
         $this->touchPad = $touchPad;
@@ -16,8 +21,6 @@ class Laptop extends Computer {
 
     public function setType()
     {
-        if ($this->touchPad) {
-            $this->type = "Laptop";
-        }
+        return $this->type = "Laptop";
     }
 };

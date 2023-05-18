@@ -1,7 +1,11 @@
-<?php 
-class Desktop extends Computer {
-    /* mouse brand, monitor brand, computer case ?, type desktop comp*/
-    public function __construct($imgPath, $model, public string $monitor, $screen, $keyboard, public string $mouse, public string $computerCase, $usbPorts, $hardDrive, $cdDrive, $motherboard) 
+<?php
+
+class Desktop extends Computer
+{
+    public $monitor;
+    public $mouse;
+    public $computerCase;
+    public function __construct($imgPath, $model, string $monitor, $screen, $keyboard, string $mouse, string $computerCase, $usbPorts, $hardDrive, $cdDrive, $motherboard)
     {
         parent::__construct($imgPath, $model, $screen, $keyboard, $usbPorts, $hardDrive, $cdDrive, $motherboard);
         $this->monitor = $monitor;
@@ -11,8 +15,6 @@ class Desktop extends Computer {
 
     public function setType()
     {
-        if ($this->computerCase) {
-            $this->type = "Desktop";
-        }
+        return $this->type = "Desktop";
     }
 };

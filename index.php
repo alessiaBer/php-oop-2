@@ -9,7 +9,12 @@ Nella card, indichiamo anche che tipo di prodotto stiamo visualizzando (desktop,
 BONUS:
 -pensate a cosa compone un pc: 'ha un' monitor? 'ha una' mbo? 'ha una' keyboard? usate la composizione per indicare costruire appropriatamente le istanze.
 -aggiungere un metodo che stampi la stringa con tutte le info del dispositivo (oltre ai getter/setters necessari).
+
+Aggiungere almeno un trait.
+Bonus:
+-aggiungere un exception
 */
+
 require_once __DIR__ . '/Models/Composition/Screen.php';
 require_once __DIR__ . '/Models/Composition/Keyboard.php';
 require_once __DIR__ . '/Models/Computer.php';
@@ -17,10 +22,10 @@ require_once __DIR__ . '/Models/Laptop.php';
 require_once __DIR__ . '/Models/Desktop.php';
 
 require_once __DIR__ . '/Database/db.php';
-/* 
+
 foreach ($computers as $computer) {
     $computer->setType();
-} */
+} 
 
 ?>
 
@@ -47,7 +52,7 @@ foreach ($computers as $computer) {
 </head>
 <body class="bg-dark text-white">
     <div class="container">
-        <h1 class="text-center py-5">My Computer Cards</h1>
+        <h1 class="text-center py-5">My Computer Store</h1>
 
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
             <?php foreach ($computers as $computer) : ?>
