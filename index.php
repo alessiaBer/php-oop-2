@@ -16,7 +16,7 @@ require_once __DIR__ . '/Models/Computer.php';
 require_once __DIR__ . '/Models/Laptop.php';
 require_once __DIR__ . '/Models/Desktop.php';
 
-include __DIR__ . '/Database/db.php';
+require_once __DIR__ . '/Database/db.php';
 /* 
 foreach ($computers as $computer) {
     $computer->setType();
