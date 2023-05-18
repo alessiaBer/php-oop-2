@@ -1,6 +1,5 @@
 <?php
 
-/* watt, connector -> mac MagSafe */
 trait Chargeable
 {
     private $unit = "Watt";
@@ -12,11 +11,14 @@ trait Chargeable
             throw new Exception("Wattage must be a numeric value!");
         } elseif (empty($connector)) {
             throw new Exception("Connector value required!");
+        } else {
+            $this->wattage = $wattage;
+            $this->connector = $connector;
         }
     }
 
     public function getCharge()
     {
-        echo "Alimentation: {$this->wattage} {$this->unit}, {$this->connector} connector";
+        return "Alimentation: {$this->wattage} {$this->unit}, {$this->connector} connector";
     }
 }

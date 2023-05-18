@@ -80,6 +80,9 @@ foreach ($computers as $computer) {
                                 </ul>
                             </li>
                             <li><strong>USB Ports:</strong> <?= $computer->usbPorts ?></li>
+                            <?php if (method_exists($computer, 'setCharge')) : ?>
+                            <li><?= $computer->getCharge() ?></li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>
